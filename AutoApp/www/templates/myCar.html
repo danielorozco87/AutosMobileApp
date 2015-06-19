@@ -1,12 +1,78 @@
 <ion-view view-title="Mi Auto">
     <ion-content ng-controller="MyCarCtrl">
-      <!-- The content of the page -->
-      Mi Auto<br>
-      <a href="#/gasStation">Estación de Servicio</a><br>
-      <a href="#/map">Gomeria</a><br>
-      <a href="#/map">Lavadero de Autos</a><br>
-      <a href="#/map">Lubricentros</a><br>
-      <a href="#/map">Talleres Mecánicoss</a><br>
-      <a href="#/map">Auxilio Mecánico</a>
+      <!-- The content of the page -->  
+	  <div class="container">
+      <div class="jumbotron">
+          <div class="icon-list clearfix">
+
+			  <div class="col-xs-3 ol-sm-3 no-padding-right">
+			  	<img src="img/images/sub-icon.png" class="img-responsive">
+			  </div>
+			  <div class="col-xs-9 col-sm-9">
+			  	<h3> Mi auto</h3>
+			  </div>
+               <div class="clearfix"></div>
+              <a href="#/gasStation">
+				   <div class="col-xs-3 ol-sm-3 no-padding-right">
+				  <img src="img/images/sub-icon1.png" class="img-responsive">
+				  </div>
+				  <div class="col-xs-9 col-sm-9">
+				  <h4> Estaciones de Servicio</h4>
+				   </div>
+				</a>
+               <div class="clearfix"></div>
+			   <a href="javascript:void(0);" ng-click="goToMap('ATM');">
+				   <div class="col-xs-3 col-sm-3 no-padding-right">
+				  <img src="img/images/sub-icon2.png" class="img-responsive">
+				  </div>
+				  <div class="col-xs-9 col-sm-9">
+				  <h4> Gomerías</h4>
+				   </div>
+				</a>
+               <div class="clearfix"></div>
+			<a href="javascript:void(0);" ng-click="goToMap('ATM');">
+               <div class="col-xs-3 ol-sm-3 no-padding-right">
+              <img src="img/images/sub-icon3.png" class="img-responsive">
+              </div>
+              <div class="col-xs-9 col-sm-9">
+              <h4> Lavadero de Autos</h4>
+               </div>
+				</a>
+               <div class="clearfix"></div>
+			   <a href="javascript:void(0);" ng-click="goToMap('ATM');">
+				   <div class="col-xs-3 ol-sm-3 no-padding-right">
+				  <img src="img/images/sub-icon4.png" class="img-responsive">
+				  </div>
+				  <div class="col-xs-9 col-sm-9">
+				  <h4> Lubricentros</h4>
+				   </div>
+				</a>
+               <div class="clearfix"></div>
+			   <a href="javascript:void(0);" ng-click="goToMap('ATM');">
+				   <div class="col-xs-3 ol-sm-3 no-padding-right">
+				  <img src="img/images/sub-icon5.png" class="img-responsive">
+				  </div>
+				  <div class="col-xs-9 col-sm-9">
+				  <h4> Talleres Mecánicos</h4>
+				   </div>
+				</a>
+               <div class="clearfix"></div>
+			   <a href="javascript:void(0);" ng-click="goToMap('ATM');">
+				   <div class="col-xs-3 ol-sm-3 no-padding-right">
+				  <img src="img/images/sub-icon6.png" class="img-responsive">
+				  </div>
+				  <div class="col-xs-9 col-sm-9">
+				  <h4>Auxilio  Mecánico</h4>
+				   </div>
+				</a>
+          </div>  
+      </div>
+
+
+      <!--<footer class="footer">
+        <p>&copy; Company 2014</p>
+      </footer>-->
+
+    </div> <!-- /container -->
 	</ion-content>
 </ion-view>

@@ -1,9 +1,53 @@
 <ion-view view-title="Accesorios">
     <ion-content ng-controller="CarItemsCtrl">
       <!-- The content of the page -->
-      Accesorios<br>
-      <a href="#/map">Nacionales</a><br>
-      <a href="#/map">Importados</a><br>
-      <a href="#/map">Todos</a>
+    <div class="container">
+      <div class="jumbotron">
+          <div class="icon-list clearfix">
+              <div class="col-xs-3 ol-sm-3 no-padding-right">
+              <img src="img/images/sub-iconb.png" class="img-responsive">
+              </div>
+              <div class="col-xs-9 col-sm-9">
+              <h3> Accesorios</h3>
+               </div>
+               <div class="clearfix"></div>
+			<a href="javascript:void(0);" ng-click="goToMap('ATM');">
+               <div class="col-xs-3 ol-sm-3 no-padding-right">
+              <img src="img/images/sub-icon15.png" class="img-responsive">
+              </div>
+              <div class="col-xs-9 col-sm-9">
+              <h4> Nacionales</h4>
+               </div>
+			</a>
+               <div class="clearfix"></div>
+			<a href="javascript:void(0);" ng-click="goToMap('ATM');">
+               <div class="col-xs-3 col-sm-3 no-padding-right">
+              <img src="img/images/sub-icon16.png" class="img-responsive">
+              </div>
+              <div class="col-xs-9 col-sm-9">
+              <h4> Importados</h4>
+               </div>
+			</a>
+               <div class="clearfix"></div>
+			<a href="javascript:void(0);" ng-click="goToMap('ATM');">
+               <div class="col-xs-3 ol-sm-3 no-padding-right">
+              <img src="img/images/sub-icon17.png" class="img-responsive">
+              </div>
+              <div class="col-xs-9 col-sm-9">
+              <h4> Todos</h4>
+               </div>
+			</a>
+
+               <div class="clearfix"></div>
+
+          </div>  
+      </div>
+
+
+      <!--<footer class="footer">
+        <p>&copy; Company 2014</p>
+      </footer>-->
+
+    </div> <!-- /container -->
 	</ion-content>
 </ion-view>

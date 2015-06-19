@@ -1,11 +1,70 @@
 <ion-view view-title="Servicios">
     <ion-content ng-controller="ServicesCtrl">
-      <!-- The content of the page -->
-      Servicios<br>
-      <a href="#/carItems">Accesorios</a><br>
-      <a href="#/map">Autopartes</a><br>
-      <a href="#/map">Alquiler de Autos</a><br>
-      <a href="#/carDealership">Concesionarias</a><br>
-      <a href="#/map">Seguros</a>
+      <!-- The content of the page -->  
+   <div class="container">
+      <div class="jumbotron">
+          <div class="icon-list clearfix">
+              <div class="col-xs-3 ol-sm-3 no-padding-right">
+              <img src="img/images/sub-icona.png" class="img-responsive">
+              </div>
+              <div class="col-xs-9 col-sm-9">
+              <h3> Servicios</h3>
+               </div>
+               <div class="clearfix"></div>
+			   <a href="#/carItems">
+               <div class="col-xs-3 ol-sm-3 no-padding-right">
+              <img src="img/images/sub-icon10.png" class="img-responsive">
+              </div>
+              <div class="col-xs-9 col-sm-9">
+              <h4> Accesorios</h4>
+               </div>
+			   </a>
+               <div class="clearfix"></div>
+			   <a href="javascript:void(0);" ng-click="goToMap('ATM');">
+               <div class="col-xs-3 col-sm-3 no-padding-right">
+              <img src="img/images/sub-icon11.png" class="img-responsive">
+              </div>
+              <div class="col-xs-9 col-sm-9">
+              <h4>Autopartes</h4>
+               </div>
+			   </a>
+               <div class="clearfix"></div>
+			   <a href="javascript:void(0);" ng-click="goToMap('ATM');">
+               <div class="col-xs-3 ol-sm-3 no-padding-right">
+              <img src="img/images/sub-icon12.png" class="img-responsive">
+              </div>
+              <div class="col-xs-9 col-sm-9">
+              <h4>Alquiler de autos </h4>
+               </div>
+			   </a>
+          <div class="clearfix"></div>
+				<a href="#/carDealership">
+               <div class="col-xs-3 ol-sm-3 no-padding-right">
+              <img src="img/images/sub-icon13.png" class="img-responsive">
+              </div>
+              <div class="col-xs-9 col-sm-9">
+              <h4>Concesionarias</h4>
+               </div>
+			   </a>
+          <div class="clearfix"></div>
+				<a href="javascript:void(0);" ng-click="goToMap('ATM');">
+               <div class="col-xs-3 ol-sm-3 no-padding-right">
+              <img src="img/images/sub-icon14.png" class="img-responsive">
+              </div>
+              <div class="col-xs-9 col-sm-9">
+              <h4>Seguros</h4>
+               </div>
+			   </a>
+          <div class="clearfix"></div>
+
+          </div>  
+      </div>
+
+
+      <!--<footer class="footer">
+        <p>&copy; Company 2014</p>
+      </footer>-->
+
+    </div> <!-- /container -->
 	</ion-content>
 </ion-view>

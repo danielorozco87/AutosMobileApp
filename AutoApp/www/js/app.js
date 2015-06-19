@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var app = angular.module('autoApp', ['ionic']);
+var app = angular.module('autoApp', ['ionic', 'ngCordova']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
@@ -48,8 +48,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
   .state('map', {
     url: '/map',
+    cache: false,
     controller: "MapCtrl",
-    templateUrl: 'templates/map.html'
+    templateUrl: 'templates/map.html',
+    params: {
+      mapType: null
+    }
   });
 
   $urlRouterProvider.otherwise("/home");
@@ -66,4 +70,37 @@ app.run(function($ionicPlatform) {
       StatusBar.styleDefault();
     }
   });
+});
+
+app.directive('map', function() {
+  return {
+    restrict: 'E',
+    scope: {
+      onCreate: '&'
+    },
+    link: function ($scope, $element, $attr) {
+      function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(43.07493, -89.381388),
+          zoom: 16,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map($element[0], mapOptions);
+  
+        $scope.onCreate({map: map});
+
+        // Stop the side bar from dragging when mousedown/tapdown on the map
+        google.maps.event.addDomListener($element[0], 'mousedown', function (e) {
+          e.preventDefault();
+          return false;
+        });
+      }
+
+      if (document.readyState === "complete") {
+        initialize();
+      } else {
+        google.maps.event.addDomListener(window, 'load', initialize);
+      }
+    }
+  }
 });

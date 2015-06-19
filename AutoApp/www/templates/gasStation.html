@@ -1,9 +1,53 @@
 <ion-view view-title="Estacion de servicio">
     <ion-content ng-controller="MyCarCtrl">
       <!-- The content of the page -->
-      Estación de servicio<br>
-      <a href="#/map">GNC</a><br>
-      <a href="#/map">Combustible</a><br>
-      <a href="#/map">GNC y Combustible</a>
+  <div class="container">
+      <div class="jumbotron">
+          <div class="icon-list clearfix">
+              <div class="col-xs-3 ol-sm-3 no-padding-right">
+              <img src="img/images/sub-icon.png" class="img-responsive">
+              </div>
+              <div class="col-xs-9 col-sm-9">
+              <h3> Mi auto</h3>
+               </div>
+               <div class="clearfix"></div>
+		  <a href="javascript:void(0);" ng-click="goToMap('ATM');">		
+               <div class="col-xs-3 ol-sm-3 no-padding-right">
+              <img src="img/images/sub-icon7.png" class="img-responsive">
+              </div>
+              <div class="col-xs-9 col-sm-9">
+              <h4> Gnc</h4>
+               </div>
+		  </a>			
+               <div class="clearfix"></div>
+		  <a href="javascript:void(0);" ng-click="goToMap('ATM');">
+               <div class="col-xs-3 col-sm-3 no-padding-right">
+              <img src="img/images/sub-icon8.png" class="img-responsive">
+              </div>
+              <div class="col-xs-9 col-sm-9">
+              <h4>Combustible</h4>
+               </div>
+		  </a>			
+               <div class="clearfix"></div>
+		  <a href="javascript:void(0);" ng-click="goToMap('ATM');">
+               <div class="col-xs-3 ol-sm-3 no-padding-right">
+              <img src="img/images/sub-icon9.png" class="img-responsive">
+              </div>
+              <div class="col-xs-9 col-sm-9">
+              <h4>Gnc + Combustible</h4>
+               </div>
+		  </a>			
+          <div class="clearfix"></div>
+
+          </div>  
+      </div>
+
+
+      <!--<footer class="footer">
+        <p>&copy; Company 2014</p>
+      </footer>-->
+
+    </div> <!-- /container -->
+	
 	</ion-content>
 </ion-view>

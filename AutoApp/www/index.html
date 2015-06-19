@@ -6,7 +6,20 @@
     <title></title>
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        #map {
+          width: 100%;
+          height: 100%;
+        }
+
+        .scroll {
+          height: 100%;
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
@@ -14,8 +27,9 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-
+    
     <!-- cordova script (this will be a 404 during development) -->
+    <script src="lib/ng-cordova.min.js"></script>
     <script src="cordova.js"></script>
     
     <!-- your app's js -->
@@ -29,6 +43,8 @@
     <script src="js/carDealershipCtrl.js"></script>
 
     <script src="js/mapCtrl.js"></script>
+    
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAAcC4ZV0Da_FpFejsjzsJ65ItGn4oG01U&sensor=true"></script>
   </head>
   <body ng-app="autoApp">
     <ion-nav-bar class="bar-positive">

@@ -1,7 +1,18 @@
 <ion-view view-title="Menu Principal">
     <ion-content ng-controller="MainMenuCtrl">
-      <a href="#/myCar">Mi auto</a><br>
-      <a href="#/services">Servicios</a><br>
-      <a href="#/map">Dinero</a>
+	<div class="container">
+      <div class="jumbotron">
+          <div class="icons center-dis">
+              <a href="#/myCar"><img src="img/images/icon1.png" class="img-responsive"></a>
+              <a href="#/services"><img src="img/images/icon2.png" class="img-responsive"></a>
+              <a href="javascript:void(0);" ng-click="goToMap('ATM');"><img src="img/images/icon3.png" class="img-responsive"></a>
+          </div>  
+      </div>
+      <!--<footer class="footer">
+        <p>&copy; Company 2014</p>
+      </footer>-->
+
+    </div> 
+
 	</ion-content>
 </ion-view>
