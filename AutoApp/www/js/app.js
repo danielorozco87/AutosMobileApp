@@ -54,6 +54,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
     params: {
       mapType: null
     }
+  })
+
+  .state('markerInfo', {
+    url: '/markerInfo',
+    cache: false,
+    controller: "MarkerInfoCtrl",
+    templateUrl: 'templates/markerInfo.html',
+    params: {
+      mapMarkerInfo: null
+    }
   });
 
   $urlRouterProvider.otherwise("/home");
@@ -72,7 +82,7 @@ app.run(function($ionicPlatform) {
   });
 });
 
-app.directive('map', function() {
+/*app.directive('map', function() {
   return {
     restrict: 'E',
     scope: {
@@ -103,4 +113,4 @@ app.directive('map', function() {
       }
     }
   }
-});
+});*/

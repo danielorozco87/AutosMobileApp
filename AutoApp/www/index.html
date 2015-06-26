@@ -6,7 +6,7 @@
     <title></title>
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+	  <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <style>
         #map {
@@ -29,7 +29,7 @@
     <script src="lib/ionic/js/ionic.bundle.js"></script>
     
     <!-- cordova script (this will be a 404 during development) -->
-    <script src="lib/ng-cordova.min.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
     <script src="cordova.js"></script>
     
     <!-- your app's js -->
@@ -43,8 +43,10 @@
     <script src="js/carDealershipCtrl.js"></script>
 
     <script src="js/mapCtrl.js"></script>
+
+    <script src="js/markerInfoCtrl.js"></script>
     
-    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAAcC4ZV0Da_FpFejsjzsJ65ItGn4oG01U&sensor=true"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAAcC4ZV0Da_FpFejsjzsJ65ItGn4oG01U&sensor=false"></script>
   </head>
   <body ng-app="autoApp">
     <ion-nav-bar class="bar-positive">

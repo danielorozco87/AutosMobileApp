@@ -1,16 +1,12 @@
 <ion-view view-title="Mapa">
     <ion-content ng-controller="MapCtrl">
-    	<div ng-repeat="post in posts">
-	    	<div>
-	    		<span ng-bind="post.title"></span> - 
-	    		<span ng-bind="post.type"></span>
-	    	</div>
-    	</div>
-
-      <map on-create="mapCreated(map)"></map>
-      
+        <div ng-repeat="post in posts">
+            <div>
+                <span ng-bind="post.title"></span> - 
+                <span ng-bind="post.type"></span>
+            </div>
+        </div>
+        
+        <div id="map" data-tap-disabled="true"></div>
     </ion-content>
-    <ion-footer-bar class="bar-stable">
-      <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate"></a>
-    </ion-footer-bar>
 </ion-view>
