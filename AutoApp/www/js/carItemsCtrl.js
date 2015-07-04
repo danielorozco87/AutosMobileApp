@@ -1,5 +1,5 @@
 app.controller('CarItemsCtrl', function($scope, $state) {
-	$scope.goToMap = function(mapType){
-		$state.go('map', { mapType: "cars" });
+	$scope.goToMap = function(type, category) {
+		$state.go('map', { mapType: type, mapCategory: category });
 	};
 });

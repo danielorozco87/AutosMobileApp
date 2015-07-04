@@ -6,7 +6,7 @@ app.controller('MapCtrl', function($scope, $state, $stateParams, $http, $ionicLo
     template: '<ion-spinner icon="android"/>'
   });
 
-  $http.get("http://www.fourhats.com.ar/autoapp/wp-json/posts?type=" + $stateParams.mapType, { })
+  $http.get("http://fourhats.com.ar/autoapp/api/index.php?type=" + $stateParams.mapType + "&category=" + $stateParams.mapCategory)
     .success(function(posts) {
         $scope.posts = posts;
         $scope.hasSettedMarks = true;
@@ -15,10 +15,15 @@ app.controller('MapCtrl', function($scope, $state, $stateParams, $http, $ionicLo
     .error(function (e) {
       $ionicLoading.hide();
 
-      $ionicPopup.alert({
-        title: 'Error al obtener los datos',
-        template: "Intente nuevamente más tarde"
-      });
+      if(e && e.length) {
+        $scope.posts = e;
+        $scope.hasSettedMarks = true;
+      } else { 
+        $ionicPopup.alert({
+          title: 'Error al obtener los datos',
+          template: "Intente nuevamente más tarde"
+        });
+      }
   });
 
   var myLatlng = new google.maps.LatLng(-34.574291, -58.431087);
@@ -34,7 +39,7 @@ app.controller('MapCtrl', function($scope, $state, $stateParams, $http, $ionicLo
   function setMarkers() {
     angular.forEach($scope.posts, function(post, key) {
         var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(post.acf.location.lat, post.acf.location.lng),
+            position: new google.maps.LatLng(post.location.lat, post.location.lng),
             map: map
         });
 

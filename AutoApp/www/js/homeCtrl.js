@@ -1,5 +1,2 @@
-app.controller('HomeCtrl', function($scope) {
-	$scope.mapCreated = function(map) {
-    	$scope.map = map;
-  	};
+app.controller('HomeCtrl', function() {
 });

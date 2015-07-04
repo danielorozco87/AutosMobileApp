@@ -52,7 +52,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
     controller: "MapCtrl",
     templateUrl: 'templates/map.html',
     params: {
-      mapType: null
+      mapType: null,
+      mapCategory: null
     }
   })
 
