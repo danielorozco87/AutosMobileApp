@@ -68,7 +68,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     }
   });
 
-  $urlRouterProvider.otherwise("/home");
+  $urlRouterProvider.otherwise("/mainMenu");
 });
 
 app.run(function($ionicPlatform) {
