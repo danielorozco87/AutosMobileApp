@@ -6,19 +6,17 @@ app.controller('MapCtrl', function($scope, $state, $stateParams, $http, $ionicLo
     template: '<ion-spinner icon="android"/>'
   });
 
-  $http.get("http://fourhats.com.ar/autoapp/api/index.php?type=" + $stateParams.mapType + "&category=" + $stateParams.mapCategory)
+  $http.get("http://fourhats.com.ar/autoapp/api/index.php?type=" + $stateParams.mapType + ($stateParams.mapCategory ? ("&category=" + $stateParams.mapCategory) : ""))
     .success(function(posts) {
         $scope.posts = posts;
         $scope.hasSettedMarks = true;
-        $ionicLoading.hide();
     })
     .error(function (e) {
-      $ionicLoading.hide();
-
       if(e && e.length) {
         $scope.posts = e;
         $scope.hasSettedMarks = true;
       } else { 
+        $ionicLoading.hide();
         $ionicPopup.alert({
           title: 'Error al obtener los datos',
           template: "Intente nuevamente más tarde"
@@ -36,15 +34,17 @@ app.controller('MapCtrl', function($scope, $state, $stateParams, $http, $ionicLo
 
   var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-  function setMarkers() {
-    angular.forEach($scope.posts, function(post, key) {
-        var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(post.location.lat, post.location.lng),
-            map: map
+    function setMarkers() {
+	      var image = 'img/pins/' + $stateParams.mapCategory + '.png';
+        angular.forEach($scope.posts, function(post, key) {
+            var marker = new google.maps.Marker({
+              position: new google.maps.LatLng(post.location.lat, post.location.lng),
+              map: map,
+			        icon: image
         });
 
         google.maps.event.addListener(marker, 'click', function() {
-          $state.go('markerInfo', { mapMarkerInfo: post });
+          $state.go('markerInfo', { mapMarkerInfo: post, mapCategory: $stateParams.mapCategory });
         });
     }, function(){});
   };
@@ -63,6 +63,8 @@ app.controller('MapCtrl', function($scope, $state, $stateParams, $http, $ionicLo
 
               google.maps.event.trigger(map, 'resize');
               map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+
+              $ionicLoading.hide();
             }, function(err) {
               // error
             });

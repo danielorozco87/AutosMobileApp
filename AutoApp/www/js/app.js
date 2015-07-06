@@ -63,7 +63,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
     controller: "MarkerInfoCtrl",
     templateUrl: 'templates/markerInfo.html',
     params: {
-      mapMarkerInfo: null
+      mapMarkerInfo: null,
+      mapCategory: null
     }
   });
 
